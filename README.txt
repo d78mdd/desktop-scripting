@@ -6,5 +6,5 @@ written using
 ran using
   AutoHotkey
 
-to start a script with Windows(10) put a shortcut here
+to run a script at Windows startup place a shortcut here
   C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
