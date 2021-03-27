@@ -1,0 +1,77 @@
+﻿sleep, 200
+iniread, c, notes.ini, count, c
+if (c="ERROR")
+	MsgBox nqma zapisi, OK za nov
+iniread, s, notes.ini, melodies, m%c%
+
+Loop, parse, s
+    count++
+
+Loop, parse, s
+{
+	SplashTextOn,,, %A_Index%\%count%
+	Send % A_LoopField
+	sleep, 200
+}
+
+SplashTextOn,,, край на записа
+sleep, 1500
+SplashTextOff
+
+run record like piano.ahk
+exitapp
+
+ctrl::pause
+esc::ExitApp
+
+`::SoundBeep, 37, % l
+
+1::SoundBeep, 43.6, % l
+q::SoundBeep, 48.9, % l
+a::SoundBeep, 55, % l
+z::SoundBeep, 61, % l
+
+2::SoundBeep, 65.4, % l
+w::SoundBeep, 82.4, % l
+s::SoundBeep, 87.3, % l
+x::SoundBeep, 97.9, % l
+
+3::SoundBeep, 110, % l
+e::SoundBeep, 123.4, % l
+d::SoundBeep, 146.8, % l
+c::SoundBeep, 164.8, % l
+
+4::SoundBeep, 174.6, % l
+r::SoundBeep, 195.9, % l
+f::SoundBeep, 220, % l
+v::SoundBeep, 261.6, % l
+
+5::SoundBeep, 293.6, % l
+t::SoundBeep, 329.6, % l
+g::SoundBeep, 349.2, % l
+b::SoundBeep, 391.9, % l
+
+6::SoundBeep, 493.8, % l
+y::SoundBeep, 523.2, % l
+h::SoundBeep, 587.3, % l
+n::SoundBeep, 659.2, % l
+
+7::SoundBeep, 698.4, % l
+u::SoundBeep, 880, % l
+j::SoundBeep, 987.7, % l
+m::SoundBeep, 1046.5, % l
+
+8::SoundBeep, 1174.6, % l
+i::SoundBeep, 1318.5, % l
+k::SoundBeep, 1567.9, % l
+,::SoundBeep, 1760, % l
+
+9::SoundBeep, 1975.5, % l
+o::SoundBeep, 2093, % l
+l::SoundBeep, 2349.3, % l
+.::SoundBeep, 2793.8, % l
+
+0::SoundBeep, 3135.9, % l
+p::SoundBeep, 3520, % l
+`;::SoundBeep, 3951.0, % l
+/::SoundBeep, 4186, % l

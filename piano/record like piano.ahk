@@ -1,0 +1,212 @@
+; zapisva vsqka melodiq na otdelen red vyv faila
+; aznad ~13129 ne se 4uvat
+
+l:=150
+melody=
+return
+
+_a:
+;melody .= letter
+melody .= A_ThisHotkey
+return
+
+
+enter::
+iniread, c, notes.ini, count, c, 0
+c++
+iniwrite, % c, notes.ini, count, c
+iniwrite, % melody, notes.ini, melodies, m%c%
+run %A_ScriptDir%\play like piano.ahk
+ExitApp
+return
+
+
+ctrl::pause
+esc::ExitApp
+
+
+`::
+SoundBeep, 37, % l
+goto _a
+
+
+1::
+SoundBeep, 43.6, % l
+goto _a
+
+q::
+;letter=q
+SoundBeep, 48.9, % l
+goto _a
+
+a::
+;letter=a
+SoundBeep, 55, % l
+goto _a
+
+z::
+SoundBeep, 61, % l
+;letter=z
+goto _a
+
+
+
+2::
+SoundBeep, 65.4, % l
+goto _a
+
+w::
+SoundBeep, 82.4, % l
+goto _a
+
+s::
+SoundBeep, 87.3, % l
+goto _a
+
+x::
+SoundBeep, 97.9, % l
+goto _a
+
+
+
+3::
+SoundBeep, 110, % l
+goto _a
+
+e::
+SoundBeep, 123.4, % l
+goto _a
+
+d::
+SoundBeep, 146.8, % l
+goto _a
+
+c::
+SoundBeep, 164.8, % l
+goto _a
+
+
+
+4::
+SoundBeep, 174.6, % l
+goto _a
+
+r::
+SoundBeep, 195.9, % l
+goto _a
+
+f::
+SoundBeep, 220, % l
+goto _a
+
+v::
+SoundBeep, 261.6, % l
+goto _a
+
+
+
+5::
+SoundBeep, 293.6, % l
+goto _a
+
+t::
+SoundBeep, 329.6, % l
+goto _a
+
+g::
+SoundBeep, 349.2, % l
+goto _a
+
+b::
+SoundBeep, 391.9, % l
+goto _a
+
+
+
+6::
+SoundBeep, 493.8, % l
+goto _a
+
+y::
+SoundBeep, 523.2, % l
+goto _a
+
+h::
+SoundBeep, 587.3, % l
+goto _a
+
+n::
+SoundBeep, 659.2, % l
+goto _a
+
+
+
+7::
+SoundBeep, 698.4, % l
+goto _a
+
+u::
+SoundBeep, 880, % l
+goto _a
+
+j::
+SoundBeep, 987.7, % l
+goto _a
+
+m::
+SoundBeep, 1046.5, % l
+goto _a
+
+
+
+8::
+SoundBeep, 1174.6, % l
+goto _a
+
+i::
+SoundBeep, 1318.5, % l
+goto _a
+
+k::
+SoundBeep, 1567.9, % l
+goto _a
+
+,::
+SoundBeep, 1760, % l
+goto _a
+
+
+
+9::
+SoundBeep, 1975.5, % l
+goto _a
+
+o::
+SoundBeep, 2093, % l
+goto _a
+
+l::
+SoundBeep, 2349.3, % l
+goto _a
+
+.::
+SoundBeep, 2793.8, % l
+goto _a
+
+
+
+0::
+SoundBeep, 3135.9, % l
+goto _a
+
+p::
+SoundBeep, 3520, % l
+goto _a
+
+`;::
+SoundBeep, 3951.0, % l
+goto _a
+
+/::
+SoundBeep, 4186, % l
+goto _a
