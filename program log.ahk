@@ -1,5 +1,14 @@
 ﻿
 /*
+17.08.21
+add tray menu items for?
+- open log folder
+- open current log file
+- open "start of last large gap"
+  - if current log has after 00:00 open it
+  - else open previous log
+  
+
 20.nov.17
 it seems it doesnt log the desktop
 
@@ -46,6 +55,19 @@ StringTrimRight, dir, a_scriptdir, 22
 SetTitleMatchMode 2
 path=E:\1_stuff\window logs\
 
+menu, tray, tip, active window logging`n%title%
+
+Menu, Tray, NoStandard
+
+menu, tray, add, EditScript
+
+menu, tray, add, LogDir
+menu, tray, add, CurrentLog
+menu, tray, add, PreviousLog
+menu, tray, add, Last2Logs
+
+Menu, Tray, Default, 5&
+Menu, Tray, Click, 1
 
 _A:
 
@@ -64,8 +86,6 @@ else
   os:="uknown"
 
 fileappend, %a_hour%:%a_min%:%a_sec% %os% - %title% [%class%] `n, % path a_dd "." a_mm "." a_yyyy ".txt"
-
-menu, tray, tip, active window logging`n%title%
 
 Loop
 {
@@ -89,3 +109,25 @@ IfWinActive, %A_ScriptName%
 return
 
 ~^r::reload
+
+
+LogDir:
+  Run, % path
+return
+
+CurrentLog:
+  Run,  % path a_dd "." a_mm "." a_yyyy ".txt"
+return
+
+PreviousLog:
+  Run,  % path a_dd-1 "." a_mm "." a_yyyy ".txt"
+return
+
+Last2Logs:
+  Run,  % path a_dd "." a_mm "." a_yyyy ".txt"
+  Run,  % path a_dd-1 "." a_mm "." a_yyyy ".txt"
+return
+
+EditScript:
+  run "C:\Program Files\AutoHotkey\SciTE\SciTE.exe" "C:\Users\test\Documents\Downloads\desktop-scripting\program log.ahk"
+return
