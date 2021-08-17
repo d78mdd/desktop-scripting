@@ -37,9 +37,6 @@ tray tip
 
 
 #persistent
-;#notrayicon
-;#singleinstance force  ; vypreki tova se slu4va da ima 2 instancii
-;#singleinstance ignore
 #singleinstance force
 
 SplitPath, A_ScriptFullPath , , ,  , var
@@ -48,7 +45,6 @@ StringTrimRight, dir, a_scriptdir, 22
 
 SetTitleMatchMode 2
 path=E:\1_stuff\window logs\
-
 
 
 _A:
@@ -70,7 +66,6 @@ else
 fileappend, %a_hour%:%a_min%:%a_sec% %os% - %title% [%class%] `n, % path a_dd "." a_mm "." a_yyyy ".txt"
 
 menu, tray, tip, active window logging`n%title%
-;ControlSetText, static10, %title%, g1
 
 Loop
 {
@@ -81,7 +76,6 @@ Loop
 }
 
 MsgBox I just went outside the loop (program log)
-
 
 ~^s:: 
 SetTitleMatchMode 2
@@ -94,22 +88,4 @@ IfWinActive, %A_ScriptName%
 }
 return
 
-;appskey & p::run edit %A_ScriptFullPath%
-;appskey & g::
-;KeyWait, appskey, up
-;KeyWait, g, up
-;run %A_ScriptDir%
-;return
-
 ~^r::reload
-;~#p::pause
-
-;~pause::pause on
-;~ScrollLock::pause off
-
-
-
-
-;#include %dir%\debug scripts\debug.ahk
-;#include %a_scriptdir%\debug.ahk
-
