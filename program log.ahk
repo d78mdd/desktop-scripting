@@ -45,10 +45,9 @@ tray tip
 SplitPath, A_ScriptFullPath , , ,  , var
 
 StringTrimRight, dir, a_scriptdir, 22
-;MsgBox % dir
 
 SetTitleMatchMode 2
-path=%a_scriptdir%\
+path=E:\1_stuff\window logs\
 
 
 
